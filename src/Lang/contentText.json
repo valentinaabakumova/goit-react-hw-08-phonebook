@@ -1,0 +1,81 @@
+{
+  "title": {
+    "en": "phonebook",
+    "ua": "Телефонна книга "
+  },
+  "contacts": {
+    "en": "contacts",
+    "ua": "Контакти"
+  },
+  "name": {
+    "en": "name:",
+    "ua": "Ім'я"
+  },
+  "number": {
+    "en": "number:",
+    "ua": "Номер"
+  },
+
+  "filter": {
+    "en": "find contacts by name:",
+    "ua": "Знайти за ім'ям"
+  },
+  "addBtn": {
+    "en": "add contact",
+    "ua": "Додати"
+  },
+  "delBtn": {
+    "en": "delete",
+    "ua": "Видалити"
+  },
+
+  "notification1": {
+    "en": "hey!",
+    "ua": "Ай!"
+  },
+
+  "notification2": {
+    "en": "  is already in your list",
+    "ua": "  здається уже є в твоїх контактах..."
+  },
+  "notification3": {
+    "en": "OK",
+    "ua": "Добре"
+  },
+  "pageContacts": {
+    "en": "contscts page",
+    "ua": "Сторінка контактів"
+  },
+  "logout": {
+    "en": "logout",
+    "ua": "Вийти"
+  },
+  "regPage": {
+    "en": "register page",
+    "ua": "Сторінка реєстрації"
+  },
+  "logPage": {
+    "en": "login page",
+    "ua": "Сторінка логіна"
+  },
+  "userName": {
+    "en": "user name:",
+    "ua": "Введіть ім'я користувача"
+  },
+  "userEmail": {
+    "en": "user email:",
+    "ua": "Введіть пошту користувача"
+  },
+  "userPassword": {
+    "en": "password:",
+    "ua": "Пароль"
+  },
+  "loginBtn": {
+    "en": "Login",
+    "ua": "Увійти"
+  },
+  "registrBtn": {
+    "en": "registration",
+    "ua": "Регістрація"
+  }
+}
