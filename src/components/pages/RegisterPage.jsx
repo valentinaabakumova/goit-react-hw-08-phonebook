@@ -8,14 +8,11 @@ import { signup } from '../../redux/auth/authOperations';
 import { getAuthError } from '../../redux/selectors';
 import useAuth from 'hooks/useAuth';
 import styled from 'styled-components';
-import useLang from '../../hooks/useLang';
-import contentText from '../../Lang/contentText.json';
 
 const RegisterPage = () => {
   const dispatch = useDispatch();
   const { status, message } = useSelector(getAuthError);
   const isLogin = useAuth();
-  const { lang } = useLang();
 
   const onRegister = data => {
     dispatch(signup(data));
@@ -25,10 +22,9 @@ const RegisterPage = () => {
     return <Navigate to="/my-contacts" />;
   }
 
-  const regPage = contentText.regPage[lang];
   return (
     <Wrapper className="container">
-      <STitle>{regPage}</STitle>
+      <STitle>register page</STitle>
       <RegisterForm onSubmit={onRegister} />
       {status && <p style={{ color: 'red' }}>{message}</p>}
     </Wrapper>

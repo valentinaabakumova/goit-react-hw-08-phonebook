@@ -1,15 +1,12 @@
 import React from 'react';
-import useLang from 'hooks/useLang';
-import contentText from '../../Lang/contentText.json';
+
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Filter = ({ value, onChange }) => {
-  const { lang } = useLang();
-  const filterLable = contentText.filter[lang];
   return (
     <StyledLable>
-      {filterLable}
+      find contacts by name:
       <StyledInput
         type="text"
         name="filter"

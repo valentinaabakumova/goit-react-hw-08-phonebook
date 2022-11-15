@@ -8,14 +8,11 @@ import { login } from '../../redux/auth/authOperations';
 import { getAuthError } from '../../redux/selectors';
 import useAuth from 'hooks/useAuth';
 import styled from 'styled-components';
-import useLang from '../../hooks/useLang';
-import contentText from '../../Lang/contentText.json';
 
 const LoginPage = () => {
   const dispatch = useDispatch();
   const { status, message } = useSelector(getAuthError);
   const isLogin = useAuth();
-  const { lang } = useLang();
 
   const onLogin = data => {
     dispatch(login(data));
@@ -24,10 +21,9 @@ const LoginPage = () => {
   if (isLogin) {
     return <Navigate to="/my-contacts" />;
   }
-  const logPage = contentText.logPage[lang];
   return (
     <Wrapper className="container">
-      <STitle>{logPage}</STitle>
+      <STitle>login page</STitle>
       <LoginForm onSubmit={onLogin} />
       {status && <p style={{ color: 'red' }}>{message}</p>}
     </Wrapper>

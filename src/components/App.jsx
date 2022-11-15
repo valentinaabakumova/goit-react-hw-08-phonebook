@@ -1,6 +1,5 @@
 import Navbar from './Navbar/Navbar';
 import UserRoutes from './UseRouts';
-import Lang from 'Lang';
 import { useEffect } from 'react';
 import { current } from '../redux/auth/authOperations';
 import { useDispatch } from 'react-redux';
@@ -16,7 +15,6 @@ function App() {
     <SBody className="App">
       <Navbar />
       <UserRoutes />
-      <Lang />
     </SBody>
   );
 }

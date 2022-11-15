@@ -1,7 +1,5 @@
 import useForm from '../../hooks/useForm';
 import styled from 'styled-components';
-import useLang from '../../hooks/useLang';
-import contentText from '../../Lang/contentText.json';
 
 const initialState = {
   email: '',
@@ -13,17 +11,13 @@ const RegisterForm = ({ onSubmit }) => {
     initialState,
     onSubmit,
   });
-  const { lang } = useLang();
 
   const { email, password } = state;
 
-  const userEmail = contentText.userEmail[lang];
-  const userPassword = contentText.userPassword[lang];
-  const loginBtn = contentText.loginBtn[lang];
   return (
     <SForm action="" onSubmit={handleSubmit}>
       <SField>
-        <label htmlFor="">{userEmail}: </label>
+        <label htmlFor="">user email: </label>
         <input
           value={email}
           name="email"
@@ -33,7 +27,7 @@ const RegisterForm = ({ onSubmit }) => {
         />
       </SField>
       <SField>
-        <label htmlFor="">{userPassword}: </label>
+        <label htmlFor="">password: </label>
         <input
           value={password}
           name="password"
@@ -42,7 +36,7 @@ const RegisterForm = ({ onSubmit }) => {
           placeholder="Введите пароль пользователя"
         />
       </SField>
-      <StyledBtn type="submit">{loginBtn}</StyledBtn>
+      <StyledBtn type="submit">login</StyledBtn>
     </SForm>
   );
 };
@@ -64,7 +58,7 @@ const SField = styled.div`
 const StyledBtn = styled.button`
   margin: auto;
   margin-left: auto;
-  font-family: inherit;
+  font-family: monospace;
   font-size: 25px;
   width: 150px;
   height: 40px;

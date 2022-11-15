@@ -1,25 +1,18 @@
 import React from 'react';
-import useLang from 'hooks/useLang';
-import contentText from '../../Lang/contentText.json';
+
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { AiOutlinePhone } from 'react-icons/ai';
 
 const ContactList = ({ contacts, onDeleteContact }) => {
-  const { lang } = useLang();
-  const deleteBtn = contentText.delBtn[lang];
   return (
     <ul>
       {contacts.map(({ name, number, id }) => (
         <StyledList key={id}>
-          <Span>
-            <AiOutlinePhone color={`black`} size={30} />
-          </Span>
           <p>
             {name}: {number}
           </p>
           <StyledBtn type="button" onClick={() => onDeleteContact(id)}>
-            {deleteBtn}
+            delete
           </StyledBtn>
         </StyledList>
       ))}
@@ -34,13 +27,10 @@ const StyledList = styled.li`
   padding: 5px;
   font-size: 25px;
 `;
-const Span = styled.span`
-  margin-right: 10px;
-`;
 
 const StyledBtn = styled.button`
   margin-left: auto;
-  font-family: inherit;
+  font-family: monospace;
   font-size: 25px;
 
   width: 150px;

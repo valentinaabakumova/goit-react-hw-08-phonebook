@@ -1,11 +1,11 @@
-import { useContext } from 'react';
+// import { useContext } from 'react';
 
-import { langContext } from '../Lang/LangContext';
+// import { langContext } from '../Lang/LangContext';
 
-const useLang = () => {
-  const data = useContext(langContext);
+// const useLang = () => {
+//   const data = useContext(langContext);
 
-  return data;
-};
+//   return data;
+// };
 
-export default useLang;
+// export default useLang;

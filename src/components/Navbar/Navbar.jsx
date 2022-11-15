@@ -1,21 +1,20 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import NavbarAuth from './NavbarAuth';
 import NavbarUser from './NavbarUser';
 import useAuth from 'hooks/useAuth';
 import styled from 'styled-components';
-import useLang from '../../hooks/useLang';
-import contentText from '../../Lang/contentText.json';
 
 const Navbar = () => {
   const isLogin = useAuth();
-  const { lang } = useLang();
-  const pageContacts = contentText.pageContacts[lang];
   return (
-    <Layout>
-      {/* <Link to="/">home</Link> */}
-      {isLogin && <SContacts to="/my-contacts">{pageContacts}</SContacts>}
-      {isLogin ? <NavbarUser /> : <NavbarAuth />}
-    </Layout>
+    <>
+      <Layout>
+        <Link to="/">home</Link>
+        {isLogin && <SContacts to="/my-contacts">contacts page</SContacts>}
+        {isLogin ? <NavbarUser /> : <NavbarAuth />}
+      </Layout>
+      {/* <Text>welcome to contact list</Text> */}
+    </>
   );
 };
 
@@ -30,5 +29,16 @@ const SContacts = styled(NavLink)`
   margin-right: auto;
   margin-left: auto;
 `;
+
+// const Text = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin-right: auto;
+//   margin-left: auto;
+//   margin-top: auto;
+//   margin-bottom: auto;
+//   font-size: 40px;
+// `;
 
 export default Navbar;

@@ -1,13 +1,9 @@
-import React, { useState, useContext } from 'react';
-import { langContext } from '../../Lang/LangContext';
-import contentText from '../../Lang/contentText.json';
-// import { useForm } from 'react-hook-form';
+import React, { useState } from 'react';
 import { Report } from 'notiflix/build/notiflix-report-aio';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 function Form({ contacts, onSubmit }) {
-  const { lang } = useContext(langContext);
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -24,13 +20,12 @@ function Form({ contacts, onSubmit }) {
         return;
     }
   };
-  const notification1 = contentText.notification1[lang];
-  const notification2 = contentText.notification2[lang];
-  const notification3 = contentText.notification3[lang];
+  const notification1 = '  is already in your list';
+  const notification2 = 'OK';
   const handleSubmit = e => {
     e.preventDefault();
     if (contacts.find(contact => contact.name === name)) {
-      Report.warning(notification1, `${name}` + notification2, notification3);
+      Report.warning(`${name}` + notification1, notification2);
       return;
     }
 
@@ -43,13 +38,10 @@ function Form({ contacts, onSubmit }) {
     setNumber('');
   };
 
-  const nameContact = contentText.name[lang];
-  const numberContact = contentText.number[lang];
-  const addBtn = contentText.addBtn[lang];
   return (
     <StyledForm onSubmit={handleSubmit}>
       <StyledLable>
-        {nameContact}
+        name:
         <StyledInput
           type="text"
           name="name"
@@ -61,7 +53,7 @@ function Form({ contacts, onSubmit }) {
         />
       </StyledLable>
       <StyledLable>
-        {numberContact}
+        number:
         <StyledInput
           type="tel"
           name="number"
@@ -73,7 +65,7 @@ function Form({ contacts, onSubmit }) {
         />
       </StyledLable>
       <StyledBtn type="submit" disabled={!name || !number}>
-        {addBtn}
+        add contact
       </StyledBtn>
     </StyledForm>
   );
@@ -106,10 +98,9 @@ const StyledInput = styled.input`
 `;
 
 const StyledBtn = styled.button`
-  font-family: inherit;
+  font-family: monospace;
   font-size: 25px;
-  color: ${props => (props.disabled ? `#7c7a7a` : ` #210672`)};
-  width: 150px;
+  width: 170px;
   height: 50px;
 `;
 

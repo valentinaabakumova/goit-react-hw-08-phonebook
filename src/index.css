@@ -4,6 +4,7 @@ body {
   margin: 0;
   /* font-family: 'Square Peg', cursive; */
   user-select: none;
+  font-family: monospace;
   /* cursor: pointer; */
 }
 

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const NavbarAuth = () => {
   return (
     <SPanel>
-      <NavLink to="/register">register</NavLink>|
+      <NavLink to="/register">register </NavLink>|
       <NavLink to="/login">login</NavLink>
     </SPanel>
   );

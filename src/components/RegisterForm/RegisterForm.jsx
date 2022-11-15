@@ -1,7 +1,5 @@
 import useForm from '../../hooks/useForm';
 import styled from 'styled-components';
-import useLang from '../../hooks/useLang';
-import contentText from '../../Lang/contentText.json';
 
 const initialState = {
   name: '',
@@ -14,47 +12,44 @@ const RegisterForm = ({ onSubmit }) => {
     initialState,
     onSubmit,
   });
-  const { lang } = useLang();
+
   const { name, email, password } = state;
-  const userName = contentText.userName[lang];
-  const userEmail = contentText.userEmail[lang];
-  const userPassword = contentText.userPassword[lang];
-  const registrBtn = contentText.registrBtn[lang];
+
   return (
     <SForm action="" onSubmit={handleSubmit}>
       <SField>
-        <label htmlFor="">{userName}: </label>
+        <label htmlFor="">user name: </label>
         <input
           value={name}
           name="name"
           onChange={handleChange}
           type="text"
-          placeholder="Введите имя пользователя"
+          placeholder="your name"
           required
         />
       </SField>
       <SField>
-        <label htmlFor="">{userEmail}: </label>
+        <label htmlFor="">user email: </label>
         <input
           value={email}
           name="email"
           onChange={handleChange}
           type="email"
-          placeholder="Введите email пользователя"
+          placeholder="your email"
         />
       </SField>
       <SField>
-        <label htmlFor="">{userPassword}: </label>
+        <label htmlFor="">password: </label>
         <input
           value={password}
           name="password"
           onChange={handleChange}
           type="password"
-          placeholder="Введите пароль пользователя"
+          placeholder="your password"
         />
       </SField>
 
-      <StyledBtn type="submit">{registrBtn}</StyledBtn>
+      <StyledBtn type="submit">registration</StyledBtn>
     </SForm>
   );
 };
@@ -64,7 +59,6 @@ export default RegisterForm;
 const SForm = styled.form`
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
   width: 600px;
   height: 100%;
@@ -80,10 +74,10 @@ const SField = styled.div`
 const StyledBtn = styled.button`
   margin: auto;
   margin-left: auto;
-  font-family: inherit;
+  font-family: monospace;
   font-size: 25px;
 
-  width: 150px;
+  width: 180px;
   height: 40px;
   cursor: pointer;
 `;
